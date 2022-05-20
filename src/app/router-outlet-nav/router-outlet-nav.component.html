@@ -1,0 +1,15 @@
+<div [ngClass]="styleClass">
+  <ul class="container nav nav-tabs">
+    <ng-container *ngFor="let t of tabs">
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="t.selected" [routerLink]="[t.routerLink]" [id]="t.routerLink">
+          {{t.displayName}}
+        </a>
+      </li>
+    </ng-container>
+  </ul>
+
+  <div class="tab-content p-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>
